@@ -35,6 +35,7 @@ final_image = zeros(size(I,1), size(I,2)); % 200*396 lık matrik
     t=t+1;
 end 
 %%
+
 clear all;close all;clc;
 % Gray Level Scale Image 
 i=imread('A_0_43.jpg');
