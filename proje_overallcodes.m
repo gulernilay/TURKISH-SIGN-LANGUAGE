@@ -117,6 +117,9 @@ final_image = zeros(size(I,1), size(I,2)); % 200*396 lık matrik
     end
 end
 %%
+
+
+
 close all; clc;
 Folder = 'C:\Users\nilay\Desktop\DENEME' ;% Resimler hangi dosyadan alınacak 
 filePattern = fullfile(Folder, '*.jpg'); % İşleme alınan dosya tipi farketmeksizin son halini jpg olarak kaydet 
