@@ -44,6 +44,6 @@ final_image = zeros(size(I,1), size(I,2)); % 200*396 lık matrik
     
     fullFileName = fullfile(Folder, file_name); % dosyaya yenı dosya açıyor ve ona jpg yazdırıyor
     imwrite(BW2 ,file_name,'jpg');
-    pause(1); % pause for one seconD
+    pause(1); % pause for one second
     t=t+1;
 end 
