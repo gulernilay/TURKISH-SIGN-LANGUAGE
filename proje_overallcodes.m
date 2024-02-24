@@ -224,6 +224,13 @@ final_image = zeros(size(I,1), size(I,2)); % 200*396 lık matrik
     dil=imdilate(im,SE);
     er=imerode(dil,SE);
     BW2 = imfill(er,'holes');
+
+    for i=71:151
+        BW2(i,1)=255;
+        i=i+1;
+    end 
+    new = imfill(BW2,'holes');
+
     
     fullFileName = fullfile(Folder, file_name); % dosyaya yenı dosya açıyor ve ona jpg yazdırıyor
     imwrite(BW2 ,file_name,'jpg');
@@ -249,6 +256,26 @@ for i=71:151
 end 
 new = imfill(BW2,'holes');
 % for i2=209:224
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 %% ALL CODES IN 1 SCRIPT:
