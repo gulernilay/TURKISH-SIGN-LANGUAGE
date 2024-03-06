@@ -1,4 +1,4 @@
-TEST ACCURACY HESAPLANMASI : 
+# ACCURACY HESAPLANMASI : 
 testData=imageDatastore('E:\TÜRK İŞARET DİLİ\Testing','IncludeSubfolders' ,true, 'LabelSource' , 'foldernames');
 
 [YPred,scores] = classify(trainedNetwork_1,testData);
