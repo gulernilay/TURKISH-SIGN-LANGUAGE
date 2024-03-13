@@ -37,7 +37,7 @@ def process_image(image_path, label,csv_writer,destination_dir):
             # Save the image with drawn landmarks
             cv2.imwrite(save_path, image_bgr)
 # Define the destination directory for images
-destination_dir = "E:\\TÜRK İŞARET DİLİ\\Bosphorus\\archive.zip\\tr_signLanguage_dataset\\test\A"
+destination_dir = "E:\\TurkishSignLanguage\\CoordinatedImages\\Test\\space"
 
 
 # Create the destination directory if it doesn't exist
@@ -52,18 +52,18 @@ hands = mp_hands.Hands(static_image_mode=True,
                        min_tracking_confidence=0.5)
 
 # Path to the directory containing images
-image_dir = "E:\\TurkishSignLanguage\\TRAINING\\Test\\A"
+image_dir = "E:\\TurkishSignLanguage\\TESTING\\test\\space"
 
 
 # Open CSV file to write landmarks data
-with open('hand_landmarks_test_A.csv', 'a', newline='') as csvfile:
+with open('hand_landmarks_test_space.csv', 'a', newline='') as csvfile:
     writer = csv.writer(csvfile)
 
     # Loop over each image in the directory
     for image_name in os.listdir(image_dir):
         if image_name.lower().endswith(('.png', '.jpg', '.jpeg')):  # Check for image files
             image_path = os.path.join(image_dir, image_name)
-            process_image(image_path, 'A', writer, destination_dir)  # The label 'A' is used for all images in this folder
+            process_image(image_path, 'space', writer, destination_dir)  # The label 'A' is used for all images in this folder
 
 # Clean up
 hands.close()
