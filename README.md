@@ -1,2 +1,7 @@
-# TURKISH-SIGN-LANGUAGE
-COMPUTER ENGINEERING GRADUATION PROJECT
+# Turkish Sign Language Recognition App
+About the Project
+This project is an innovative initiative designed to bridge the communication gap for the hearing-impaired community through technology. By converting sign language gestures and audio signals into text, this mobile application stands as a beacon of accessibility and inclusion. Utilizing state-of-the-art convolutional neural networks, specifically MobileNetv2, the app interprets complex sign language gestures in real-time, rendering them into easily understandable text. Our application is not only a tool but a companion that enhances daily interactions for those challenged by hearing impairments, enabling them to engage more fully with the world around them.
+
+Motivation
+The inspiration for this project is deeply rooted in our commitment to social responsibility and technological innovation. With over 466 million people worldwide experiencing significant hearing impairments, the need for effective communication tools is undeniable. These individuals often encounter substantial barriers in both personal interactions and public engagements, limiting their access to services and opportunities that many take for granted. By integrating cutting-edge AI and mobile technology, we aim to dismantle these barriers, offering a transformative tool that empowers the hearing-impaired community. This project goes beyond mere technological advancement; it's about creating a more inclusive society where communication barriers are obliterated and where everyone has the chance to thrive.
+
