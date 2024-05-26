@@ -14,7 +14,9 @@ We utilized three main datasets for training our models:
 
 # Technologies Used
 MobileNet: For efficient, real-time sign language gesture recognition.
+
 Kotlin: Used for developing the mobile application.
+
 Deep Learning Libraries: PyTorch and TensorFlow for training convolutional neural networks.
 
 # Features
