@@ -35,7 +35,6 @@ We trained our models using various augmentation techniques such as rotation, sc
 
 #  Application Workflow
 Camera Module : 
-
     Hand Detection: Utilizes a pre-trained model to detect hands in video frames.
     
     Gesture Recognition: Once detected, the hand region bounded with a box  is cropped and analyzed by the MobileNetv2 model for gesture recognition.
@@ -43,7 +42,6 @@ Camera Module :
     Output Generation: Converts recognized gestures into text displayed within the app.
     
 Quiz Module :    
-
     25 questions are waiting to be answered by users.
     
 Speech Module : 
