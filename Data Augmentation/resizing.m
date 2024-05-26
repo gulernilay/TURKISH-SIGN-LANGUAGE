@@ -1,21 +1,30 @@
-%%  Read all files in a folder and resize them. 
+%% Read and resize all .jpg files in a specified folder
 
-clear all;close all;clc;
+clear all; close all; clc;
 
-Folder = 'C:\Users\nilay\Desktop\DENEME' ;% % Resimler hangi dosyadan alınacak 
-filePattern = fullfile(Folder, '*.jpg'); % İşleme alınan dosya tipi farketmeksizin son halini jpg olarak kaydet 
-theFiles = dir(filePattern);% dosyaları ve klasörlerı  lıstelenir / Ynaı bır dosyada kac tane resım fıle var ıse o kadar ıslem yapacak 
-t=1;
+% Define the folder path where the images are located
+Folder = 'C:\Path\To\Your\Images'; 
+% Create a file pattern to match all .jpg files in the folder
+filePattern = fullfile(Folder, '*.jpg'); 
+% Retrieve the list of all jpg files in the directory
+theFiles = dir(filePattern); 
+t = 1;
 
-for k = 1 : length(theFiles) % Dosyada bulunan resim sayısı kadar döngü döndürülür 
-    baseFileName = theFiles(k).name; % işlenecek dosyanın ismi alınır  
-    imOriginal = imread(baseFileName);% işlenecek dosyanın okunur 
+% Loop through each file found
+for k = 1:length(theFiles) 
+    baseFileName = theFiles(k).name; % Get the current file's name
+    fullFilePath = fullfile(Folder, baseFileName); % Construct full file path
+    imOriginal = imread(fullFilePath); % Read the image file
 
-    file_name = sprintf('Resized%d.png', t);   % name Image with a sequence of number, ex Image1.png , Image2.png....
-    I = imresize(imOriginal,[224 224]); % scaling part 
-    % bicubic veya bilinear en iyi sonuç veren metotlardan biriydi 
-    fullFileName = fullfile(Folder, file_name); % dosyaya yenı dosya açıyor ve ona jpg yazdırıyor
-    imwrite(I,file_name,'jpg');
-    pause(1); % pause for one second
-    t=t+1;
+    % Define the new file name for the resized image
+    file_name = sprintf('Resized%d.jpg', t); 
+    % Resize the original image to 224x224 pixels
+    I = imresize(imOriginal, [224 224]); 
+    % Define the full file name where the resized image will be saved
+    fullFileName = fullfile(Folder, file_name); 
+    % Save the resized image to the same folder
+    imwrite(I, fullFileName, 'jpg');
+    % Pause for one second to manage processing load
+    pause(1); 
+    t = t + 1; % Increment the file name counter
 end

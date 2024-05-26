@@ -1,11 +1,14 @@
 
-clear all;close all;clc;
+% Convert an RGB image to a Grayscale image
 
-% Gray Level Scale Image i
+% Read the original RGB image
+i = imread('A_0_43.jpg');
+% Display the original image
+imshow(i);
+title('Input Image'); % Title for the input image display
 
-i=imread('A_0_43.jpg');
-imshow(i) ;
-title('Input Image'); 
-  I1=rgb2gray(i);
-  figure,imshow(I1) ;
-  title('Gray-Scale Image');
+% Convert the RGB image to Grayscale
+I1 = rgb2gray(i);
+% Display the grayscale image
+figure, imshow(I1);
+title('Gray-Scale Image'); % Title for the grayscale image display

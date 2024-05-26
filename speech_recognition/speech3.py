@@ -1,29 +1,42 @@
 import speech_recognition
-#speech_recognition kütüphanesi, birçok konuşma tanıma servisini destekleyen bir Python kütüphanesidir.
-#SpeechRecognition kütüphanesi, farklı tanıma servislerini (Google, Sphinx, Bing, vs.) ve ses kaynaklarını (mikrofon, ses dosyaları) destekler. 
 import pyttsx3
-#bilgisayarın ses çıkışından metin tabanlı verileri sesli olarak okumanıza olanak tanır. 
 
-# Tanıyıcı oluşturulur
+# Initialize the speech recognition recognizer
 recognizer = speech_recognition.Recognizer()
+
+# Initialize the text-to-speech engine
+engine = pyttsx3.init()
+
+def speak(text):
+    """ Function to speak the provided text. """
+    engine.say(text)
+    engine.runAndWait()
 
 while True:
     with speech_recognition.Microphone() as mic:
+        # Adjust the recognizer sensitivity to ambient noise
         recognizer.adjust_for_ambient_noise(mic, duration=0.2)
-        #Arka plan gürültüsünü dikkate alarak ses kaynağının gürültü seviyesini ayarlanır.
-        #arka plan gürültüsünü ölçmek ve tanıma işlemi sırasında bu gürültüyü dikkate alarak daha iyi sonuçlar elde etmek için kullanılır.
-        print("Lütfen bir şey söyleyin")
+        speak("Lütfen bir şey söyleyin")
+        print("Dinleniyor...")  # Print statement to show when the program is listening
         audio = recognizer.listen(mic)
-        #mikrofondan gelen ses kaydedilir.
-
+        
         try:
-            # Konuşmayı tanı
-            text = recognizer.recognize_google(audio, language="tr-TR")  
-            #SpeechRecognition kütüphanesi aracılığıyla Google Konuşma Tanıma servisini kullanarak sesi metne dönüştüren işlemi gerçekleştirir
+            # Recognize speech using Google's speech recognition
+            text = recognizer.recognize_google(audio, language="tr-TR")
             text = text.lower()
-            #metin işleme ve karşılaştırmaları büyük/küçük harf duyarlı olmayan bir şekilde gerçekleştirmek için
             print(f"Tanıma Sonucu: {text}")
-
+            speak("Anladım: " + text)
+        
         except speech_recognition.UnknownValueError:
-            # Konuşma tanınamadı
-            continue
+            # Handle unrecognized speech
+            print("Üzgünüm, konuşmanızı anlayamadım.")
+            speak("Üzgünüm, konuşmanızı anlayamadım.")
+        except speech_recognition.RequestError as e:
+            # Handle errors in the speech recognition request
+            print("Google Speech Recognition servisine erişilemiyor; {0}".format(e))
+            speak("Hizmete erişilemiyor")
+        except Exception as e:
+            # Handle other exceptions
+            print("Bir hata oluştu: {0}".format(e))
+            speak("Bir hata oluştu")
+
