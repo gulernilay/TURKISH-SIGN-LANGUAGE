@@ -21,9 +21,13 @@ Deep Learning Libraries: PyTorch and TensorFlow for training convolutional neura
 
 # Features
 -Sign Language Classification: Converts gestures into corresponding text.
+
 -Speech-to-Text Conversion: Allows for verbal communication interpretation.
+
 -Educational Tools: Includes quizzes and educational photos to aid learning.
+
 -Real-Time Recognition: Offers immediate gesture-to-text conversion.
+
 -Quiz Screen : To educate users in order to learn sign language.
 
 #  Model Training
@@ -34,8 +38,10 @@ Camera Module :
     Hand Detection: Utilizes a pre-trained model to detect hands in video frames.
     Gesture Recognition: Once detected, the hand region bounded with a box  is cropped and analyzed by the MobileNetv2 model for gesture recognition.
     Output Generation: Converts recognized gestures into text displayed within the app.
+    
 Quiz Module :    
     25 questions are waiting to be answered by users.
+    
 Speech Module : 
     Google API is used for converting speech into text 
 
